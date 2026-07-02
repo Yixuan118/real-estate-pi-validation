@@ -1,14 +1,14 @@
-# ?? Real Estate Multi-Agent Search & Monitor
+# ğŸ  Real Estate Multi-Agent Search & Monitor
 
 A real estate property search and monitoring web app powered by a multi-agent architecture strictly following [pi-collaborating-agents](https://github.com/baochunli/pi-collaborating-agents) parallel agent coordination pattern.
 
 ## Architecture
 
 ```
-Orchestrator ©¤©¤¡ú MemoryKeeper (criteria extraction & persistence)
-            ©À©¤©¤¡ú PropertyScraper (parallel source scraping via Promise.all)
-            ©À©¤©¤¡ú MarketAnalyst (analysis in parallel with memory storage)
-            ©¸©¤©¤¡ú AgentBus (agent_message routing: send/broadcast/feed/reserve)
+Orchestrator â”€â”€â†’ MemoryKeeper (criteria extraction & persistence)
+            â”œâ”€â”€â†’ PropertyScraper (parallel source scraping via Promise.all)
+            â”œâ”€â”€â†’ MarketAnalyst (analysis in parallel with memory storage)
+            â””â”€â”€â†’ AgentBus (agent_message routing: send/broadcast/feed/reserve)
 ```
 
 All agents communicate through the `agent_message()` protocol:
@@ -19,10 +19,10 @@ All agents communicate through the `agent_message()` protocol:
 ## Features
 
 - **Natural language search**: "I'm looking for a 3-bedroom house under $500k in Seattle with a pool and garage"
-- **Progressive filtering**: Add conditions one by one ¡ª results narrow like Meituan multi-condition search
+- **Progressive filtering**: Add conditions one by one â€” results narrow like multi-condition search
 - **Multi-amenity detection**: pool, garage, yard, gym, rooftop, parking, doorman
 - **150+ diverse listings**: 15 cities, multiple property types, rich amenity data
-- **Watch mode**: Set and forget ¡ª get alerts when new matches appear
+- **Watch mode**: Set and forget â€” get alerts when new matches appear
 - **Memory persistence**: AI remembers all conversations and updates criteria
 
 ## Quick Start
@@ -51,19 +51,19 @@ Open http://localhost:3099
 
 ```
 outputs/
-©À©¤©¤ client/
-©¦   ©¸©¤©¤ index.html          # Web UI (dark theme, chat interface)
-©À©¤©¤ server/
-©¦   ©À©¤©¤ index.js            # Express + WebSocket entry point
-©¦   ©¸©¤©¤ agents/
-©¦       ©À©¤©¤ AgentBus.js     # pi agent_message() bus (send/broadcast/reserve/release)
-©¦       ©À©¤©¤ BaseAgent.js    # Base class with auto-registration
-©¦       ©À©¤©¤ OrchestratorAgent.js  # Coordinator ¡ª spawns parallel sub-agents
-©¦       ©À©¤©¤ FirecrawlScraperAgent.js  # Property scraper (parallel sources)
-©¦       ©À©¤©¤ AnalyzerAgent.js        # Market analysis agent
-©¦       ©¸©¤©¤ MemoryAgent.js          # Conversation & criteria persistence
-©À©¤©¤ package.json
-©¸©¤©¤ start.bat
+â”œâ”€â”€ client/
+â”‚   â””â”€â”€ index.html          # Web UI (dark theme, chat interface)
+â”œâ”€â”€ server/
+â”‚   â”œâ”€â”€ index.js            # Express + WebSocket entry point
+â”‚   â””â”€â”€ agents/
+â”‚       â”œâ”€â”€ AgentBus.js     # pi agent_message() bus (send/broadcast/reserve/release)
+â”‚       â”œâ”€â”€ BaseAgent.js    # Base class with auto-registration
+â”‚       â”œâ”€â”€ OrchestratorAgent.js  # Coordinator â€” spawns parallel sub-agents
+â”‚       â”œâ”€â”€ FirecrawlScraperAgent.js  # Property scraper (parallel sources)
+â”‚       â”œâ”€â”€ AnalyzerAgent.js        # Market analysis agent
+â”‚       â””â”€â”€ MemoryAgent.js          # Conversation & criteria persistence
+â”œâ”€â”€ package.json
+â””â”€â”€ start.bat
 ```
 
 ## Example Queries
@@ -71,5 +71,5 @@ outputs/
 - "I'm looking for a 2-bedroom house under $500k in Seattle with a pool"
 - "3-bedroom house under $500k in Seattle with a pool and garage"
 - "I want a condo under $300k in Miami with a gym"
-- "and a yard too" (progressive ¡ª adds to existing criteria)
-- "with a pool" (progressive ¡ª stacks onto previous filters)
+- "and a yard too" (progressive â€” adds to existing criteria)
+- "with a pool" (progressive â€” stacks onto previous filters)
